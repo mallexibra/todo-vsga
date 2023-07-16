@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+$primary-color: #609966;
+$warning-color: #fec868;
+$danger-color: #fe6868;
+$text-warning: #3c3c3c;
+
+body {
+  display: flex;
+  .img-left {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      background-image: url(../img/img-bg.png);
+      background-size: cover;
+      width: 50%;
+      position: relative;
+      div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #6099666b;
+        backdrop-filter: blur(3px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        h1 {
+          width: 420px;
+          font-size: 52px;
+          text-align: center;
+          font-weight: 900;
+          text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.257);
+        }
+        p {
+          font-size: 22px;
+          text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.257);
+        }
+      }
+    }
+  }
+  main {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
+    form {
+      width: 70%;
+      margin: auto;
+      color: $primary-color;
+      h1 {
+        text-align: center;
+        font-weight: 900;
+      }
+      p {
+        text-align: center;
+        font-weight: 500;
+        color: black;
+        margin-bottom: 30px;
+      }
+      label {
+        &.remember {
+          flex-direction: row;
+          gap: 10px;
+          input[type="checkbox"] {
+            width: 20px;
+            border: none;
+          }
+        }
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        span {
+          font-weight: 600;
+        }
+        div {
+          background-color: white;
+          border: 2px solid $primary-color;
+          border-radius: 5px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+          input {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            color: $primary-color;
+            &::placeholder {
+              color: $primary-color;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      #validasi {
+        font-size: 12px;
+        text-align: center;
+        padding: 8px;
+        border-radius: 5px;
+        color: white;
+        &.valid {
+          background-color: #609966;
+        }
+        &.error {
+            background-color: #e72513;
+          }
+      }
+      button {
+        text-align: center;
+        background-color: $primary-color;
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+      }
+      p {
+        margin: 10px;
+        a {
+          color: $primary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  @apply max-w-6xl p-5 mx-auto;
+}
+
+.tittle {
+  @apply mx-auto text-center w-max text-2xl border-b-2 block text-primary-color font-bold;
+}

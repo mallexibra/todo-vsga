@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #609966;
+}
+nav .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px;
+}
+nav .brand img {
+  width: 35px;
+  height: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+nav .brand h1 {
+  color: white;
+  font-size: 22px;
+}
+nav .brand div {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+nav .brand div img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+nav .brand div ul {
+  position: absolute;
+  list-style: none;
+  left: 10px;
+  bottom: -80px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.243);
+}
+nav .brand div ul.hidden {
+  display: none;
+}
+nav .brand div ul a {
+  padding: 6px 14px;
+  display: block;
+  color: #609966;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav .brand div ul a:hover {
+  background-color: #609966;
+  color: white;
+}
+
+.main {
+  margin-top: 30px;
+}
+.main header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main header h1 {
+  font-weight: 900;
+  color: #609966;
+}
+.main header p {
+  opacity: 0.5;
+}
+@media screen and (min-width: 768px) {
+  .main .content {
+    max-width: 568px;
+    margin: auto;
+  }
+}
+.main .content .category {
+  display: flex;
+  gap: 15px;
+}
+.main .content .category a {
+  text-decoration: none;
+  color: #609966;
+  opacity: 0.5;
+}
+.main .content .category a.active {
+  opacity: 1;
+}
+.main .content form {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+.main .content form input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #609966;
+  border-radius: 5px;
+  padding: 8px;
+  color: #609966;
+}
+.main .content form input::-moz-placeholder {
+  color: #609966;
+  opacity: 0.5;
+  font-style: italic;
+}
+.main .content form input::placeholder {
+  color: #609966;
+  opacity: 0.5;
+  font-style: italic;
+}
+.main .content form button {
+  padding: 10px 14px;
+  background-color: #609966;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.main .content .listTodo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .content .listTodo section {
+  border: 1px solid #609966;
+  border-radius: 5px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .content .listTodo section .info {
+  display: flex;
+  align-items: start;
+}
+.main .content .listTodo section .info .todo h3 {
+  color: #609966;
+}
+.main .content .listTodo section .info .todo p {
+  opacity: 0.5;
+  font-size: 14px;
+}
+.main .content .listTodo section .info .toggle {
+  border: 1.5px solid #609966;
+  width: 50px;
+  border-radius: 30px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+.main .content .listTodo section .info .toggle input {
+  width: 100%;
+  display: none;
+}
+.main .content .listTodo section .info .toggle input:checked ~ span {
+  background-color: #609966;
+  left: 28px;
+}
+.main .content .listTodo section .info .toggle span {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  border-radius: 50%;
+}
+.main .content .listTodo section .action {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+}
+.main .content .listTodo section .action a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.main .content .listTodo section .action a:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.341);
+}
+.main .content .listTodo section .action a.edit {
+  background-color: #FEC868;
+  color: #3C3C3C;
+}
+.main .content .listTodo section .action a.remove {
+  background-color: #FE6868;
+  color: white;
+}
+.main .content .listTodo section .action .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(96, 153, 102, 0.2745098039);
+  z-index: 999;
+}
+.main .content .listTodo section .action .overlay.hidden {
+  display: none;
+}
+.main .content .listTodo section .action .overlay form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+.main .content .listTodo section .action .overlay form img {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+}
+.main .content .listTodo section .action .overlay form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+}
+.main .content .listTodo section .action .overlay form label span {
+  color: #609966;
+  font-weight: 600;
+}/*# sourceMappingURL=index.css.map */

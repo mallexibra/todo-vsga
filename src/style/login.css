@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+}
+body .img-left {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  body .img-left {
+    display: block;
+    background-image: url(../img/img-bg.png);
+    background-size: cover;
+    width: 50%;
+    position: relative;
+  }
+  body .img-left div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(96, 153, 102, 0.4196078431);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+  body .img-left div h1 {
+    width: 420px;
+    font-size: 52px;
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.257);
+  }
+  body .img-left div p {
+    font-size: 22px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.257);
+  }
+}
+body main {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  body main {
+    width: 50%;
+  }
+}
+body main form {
+  width: 70%;
+  margin: auto;
+  color: #609966;
+}
+body main form h1 {
+  text-align: center;
+  font-weight: 900;
+}
+body main form p {
+  text-align: center;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 30px;
+}
+body main form label {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+body main form label.remember {
+  flex-direction: row;
+  gap: 10px;
+}
+body main form label.remember input[type=checkbox] {
+  width: 20px;
+  border: none;
+}
+body main form label span {
+  font-weight: 600;
+}
+body main form label div {
+  background-color: white;
+  border: 2px solid #609966;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+}
+body main form label div input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #609966;
+}
+body main form label div input::-moz-placeholder {
+  color: #609966;
+  opacity: 0.5;
+}
+body main form label div input::placeholder {
+  color: #609966;
+  opacity: 0.5;
+}
+body main form #validasi {
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+}
+body main form #validasi.valid {
+  background-color: #609966;
+}
+body main form #validasi.error {
+  background-color: #e72513;
+}
+body main form button {
+  text-align: center;
+  background-color: #609966;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+body main form p {
+  margin: 10px;
+}
+body main form p a {
+  color: #609966;
+  text-decoration: none;
+}/*# sourceMappingURL=login.css.map */

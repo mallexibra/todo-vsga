@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | To-do List</title>
+    <link rel="stylesheet" href="src/style/login.css">
+</head>
+<body>
+    <div class="img-left">
+        <div>
+            <h1>ADVANTURE START HERE!</h1>
+            <p>Join our community</p>
+        </div>
+    </div>
+    <main>
+        <form action="">
+            <h1>LOGIN PAGE</h1>
+            <p>Hello, Welcome back!</p>
+            <label for="email">
+                <span>Email</span>
+                <div>
+                    <img src="src/img/email.png" alt="Password">
+                    <input type="email" placeholder="Enter your email address" required name="email" id="email">
+                </div>
+            </label>
+            <label for="password">
+                <span>Password</span>
+                <div>
+                    <img src="src/img/password.png" alt="Password">
+                    <input type="password" placeholder="Enter your password" required name="password" id="password">
+                </div>
+            </label>
+            <label for="remember" class="remember">
+                <input type="checkbox" name="remember" id="remember">
+                <span>Remember me</span>
+            </label>
+            <label for="" id="validasi"></label>
+            <button type="submit" id="button">Login</button>
+            <p>Don't have an account? <a href="#">Create account</a></p>
+        </form>
+    </main>
+    <script src="src/style/script.js"></script>
+    <script src="src/style/validateForm.js"></script>
+</body>
+</html>

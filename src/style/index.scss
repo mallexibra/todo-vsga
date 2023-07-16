@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+$primary-color: #609966;
+$warning-color: #FEC868;
+$danger-color: #FE6868;
+$text-warning: #3C3C3C;
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav{
+    background-color: $primary-color;
+    .brand{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 22px;
+        img{
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        h1{
+            color: white;
+            font-size: 22px;
+        }
+        div{
+            position: relative;
+            display: grid;
+            place-items: center;
+            img{
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+            ul{
+                position: absolute;
+                list-style: none;
+                left: 10px;
+                bottom: -80px;
+                background-color: white;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: 0 0 3px rgba(0, 0, 0, 0.243);
+                &.hidden{
+                    display: none;
+                }
+                a{
+                    padding: 6px 14px;
+                    display: block;
+                    color: $primary-color;
+                    text-decoration: none;
+                    font-weight: 600;
+                    &:hover{
+                        background-color: $primary-color;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main{
+    margin-top: 30px;
+    header{
+        text-align: center;
+        margin-bottom: 20px;
+        h1{
+            font-weight: 900;
+            color: $primary-color;
+        }
+        p{
+            opacity: 0.5;
+        }
+    }
+    .content{
+        @media screen and (min-width: 768px) {
+            max-width: 568px;
+            margin: auto;
+        }
+        .category{
+            display: flex;
+            gap: 15px;
+            a{
+                text-decoration: none;
+                color: $primary-color;
+                opacity: 0.5;
+                &.active{
+                    opacity: 1;
+                }
+            }
+        }
+        form{
+            width: 100%;
+            display: flex;
+            gap: 8px;
+            margin: 8px 0;
+            input{
+                width: 100%;
+                outline: none;
+                border: 1px solid $primary-color;
+                border-radius: 5px;
+                padding: 8px;
+                color: $primary-color;
+                &::placeholder{
+                    color: $primary-color;
+                    opacity: 0.5;
+                    font-style: italic;
+                }
+            }
+            button{
+                padding: 10px 14px;
+                background-color: $primary-color;
+                color: white;
+                font-weight: 700;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .listTodo{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            section{
+                border: 1px solid $primary-color;
+                border-radius: 5px;
+                padding: 14px 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .info{
+                    display: flex;
+                    align-items: start;
+                    .todo{
+                        h3{
+                            color: $primary-color;
+                        }
+                        p{
+                            opacity: 0.5;
+                            font-size: 14px;
+                        }
+                    }
+                    .toggle{
+                        border: 1.5px solid $primary-color;
+                        width: 50px;
+                        border-radius: 30px;
+                        display: flex;
+                        position: relative;
+                        cursor: pointer;
+                        input{
+                            width: 100%;
+                            display: none;
+                            &:checked ~ span{
+                                background-color: $primary-color;
+                                left: 28px;
+                            }
+                        }
+                        span{
+                            width: 20px;
+                            height: 20px;
+                            background-color: red;
+                            display: inline-block;
+                            position: relative;
+                            left: 0;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                .action{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 5px;
+                    a{
+                        text-decoration: none;
+                        font-weight: 600;
+                        padding: 5px;
+                        font-size: 12px;
+                        border-radius: 3px;
+                        transition: all 0.3s ease-in-out;
+                        &:hover{
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.341);
+                        }
+                        &.edit{
+                            background-color: $warning-color;
+                            color: $text-warning;
+                        }
+                        &.remove{
+                            background-color: $danger-color;
+                            color: white;
+                        }
+                    }
+                    .overlay{
+                        position: fixed;
+                        top: 0; right: 0; bottom: 0; left: 0;
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                        background-color: #60996646;
+                        z-index: 999;
+                        &.hidden{
+                            display: none;
+                        }
+                        form{
+                            background-color: white;
+                            display: flex;
+                            flex-direction: column;
+                            width: 300px;
+                            padding: 20px;
+                            border-radius: 10px;
+                            position: relative;
+                            img{
+                                position: absolute;
+                                top: -10px;right: -10px;
+                                cursor: pointer;
+                            }
+                            label{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: start;
+                                align-items: start;
+                                gap: 8px;
+                                span{
+                                    color: $primary-color;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
